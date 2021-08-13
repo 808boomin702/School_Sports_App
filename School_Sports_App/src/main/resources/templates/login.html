@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang=”en” xmlns:th=”https://www.thymeleaf.org”>
+<head>
+    <meta charset=”UTF-8”/>
+    <title>Title</title>
+</head>
+<body>
+
+<!-- Nav Bar Begin -->
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+</ul>
+
+<! -- Nav Bar End -->
+
+<h1> My Login Form</h1>
+<div th:if="${param.error}">Invalid Username or Password.</div>
+<div th:if="${param.logout}">You have been successfully logged out.</div>
+<form th:action="@{/login}" method="post">
+    <div>
+        <label>Username: <input type="text" name="username" /></label>
+    </div>
+    <div>
+        <label>Password: <input type="password" name="password" /></label>
+    </div>
+    <div>
+        <input type="submit" value="Sign in"/>
+    </div>
+</form>
+</body>
+</html>

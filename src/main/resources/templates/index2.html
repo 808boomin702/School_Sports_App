@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang=”en” xmlns:th=”https://www.thymeleaf.org”>
+<head>
+    <meta charset=”UTF-8”/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Teams List</h1>
+<div th:each=”team : ${teams}”>
+    <h2 th:text=”${team.name}”></h2>
+    <h6 th:inline=”text”>specializing in [[${team.genre}]]</h6>
+    <ul>
+        <th:block th:each=”player : ${team.players}”>
+            <li th:inline=”text”><b>[[${player.firstName}]]</b> released in
+                [[${player.age}]].</li>
+        </th:block>
+    </ul>
+</div>
+</body>
+
+</html>
